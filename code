@@ -8,13 +8,7 @@ string inventory[10] = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 int health = 100;
 //funtions
 int gold = 100;
-void Shop();
-char input;
-int Mongen2();
-int Mongen();
-void Battlesystem();
-void Battlesystem3();
-void BattleSystem2();
+char input = ' ';
 void ItemDropper();
 void Cat();
 bool Haswon = false;
@@ -57,7 +51,10 @@ int main() {
 	cout << "when chistina was pregentant she got shoot in the rib cage luckiy the baby wasnt hurt" << endl;
 	system("pause");
 	cout << "they named him juan johnny verastegui" << endl;
-	while (input != 'q' && Haswon == false && health > 0) { //////game loop
+	
+	
+	while (input != 'q' && !Haswon && health > 0) {
+		//////game loop
 		cout << "your backpack:" << endl;
 		for (int i = 0; i < 10; i++) //inventory
 			cout << inventory[i] << " ";
@@ -74,7 +71,6 @@ int main() {
 			cout << "no you need to get up now" << endl;
 			system("pause");
 			cout << "ok fine (you get changed) you can (o)pen the door, (l)ook under your bed or you can open the (b)ox in the corner" << endl;
-			cin >> direction;
 			cout << "You go to school then you go home " << endl;
 			system("pause");
 			cout << "You come home after you eat dinner " << endl;
@@ -94,22 +90,21 @@ int main() {
 			cout << "Hey your dad is gonna drive you to school if the office asks tell them he's your tio " << endl;
 			system("pause");
 			cout << "Okay ma" << endl;
+			cin >> direction;
 			if (direction == "o" || direction == "open" || direction == "O" || direction == "Open")
 				room = 2;
-			if (direction == "l" || direction == "look" || direction == "L" || direction == "LOOK") {
-				inventory[0] = "left dounut chunk";
+		
+		if (direction == "b" || direction == "box" || direction == "B" || direction == "BOX") {
+			if (chest1 == false) {
+				cout << "the box has!" << endl;
+				ItemDropper();
+				chest1 = true;
 			}
-			if (direction == "b" || direction == "box" || direction == "B" || direction == "BOX") {
-				if (chest1 == false) {
-					cout << "the box has!" << endl;
-					ItemDropper();
-					chest1 = true;
-				}
-				else {
-					cout << "the chest is empty" << endl;
-				}
+			else {
+				cout << "the chest is empty" << endl;
 			}
-			break;
+		}
+		break;
 		case 2:
 			cout << "Later after school….." << endl;
 			system("pause");
@@ -136,6 +131,8 @@ int main() {
 			cout << "Stop crying before i give you something to cry about" << endl;
 			system("pause");
 			cout << "She leaves the kitchen" << endl;
+			system("pause");
+			cout << "you can go(w)est or (e)ast into the next room" << endl;
 
 			cin >> direction;
 			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
@@ -183,6 +180,8 @@ int main() {
 			cout << "The next day…" << endl;
 			system("pause");
 			cout << "In the morning you wake up and smell blueberry and banana pancakes" << endl;
+			system("pause");
+			cout << "you can go (S)outh into the next room or you can go in the last room (w)est Also you can pick a box up " << endl;
 			cin >> direction;
 			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
 				room = 2;
@@ -191,9 +190,6 @@ int main() {
 			}
 			if (direction == "south" || direction == "S" || direction == "South")
 				room = 4;
-			if (direction == "s" || direction == "shop" || direction == "Shop") {
-				Shop();
-			}
 			break;
 
 
@@ -233,13 +229,13 @@ int main() {
 			cout << "or how big she was. it was shocking how skinny she became after kemo" << endl;
 			system("pause");
 			cout << " though seeing her grow weaker and weaker day by day hurt alot atleast she made me have a good childhood" << endl;
+			system("pause");
+			cout << "you can go in the next room (e)ast or last one (N)orth" << endl;
 			cin >> direction;
 			if (direction == "n" || direction == "north" || direction == "N" || direction == "North")
 				room = 3;
 			if (direction == "e" || direction == "east" || direction == "E" || direction == "East")
 				room = 5;
-			if (direction == "s" || direction == "south" || direction == "S" || direction == "South")
-				room = 9;
 			break;
 		case 5:
 			cout << "over the years ma has showed me history of natives" << endl;
@@ -252,13 +248,14 @@ int main() {
 			system("pause");
 			cout << "i had to take care of your tio and tia and we were homeless" << endl;
 			system("pause");
-			cout << "your grandma was nowhere to be found sometimes and she would give her money to unlce mikey in jail" << endl;
+			cout << "your grandma was nowhere to be found sometimes and she would give her money to uncle mikey in jail" << endl;
 			system("pause");
 			cout << "you have everything put in front of you, you should be more greatful" << endl;
+			system("pause");
+			cout << "you can go (e)ast or (w)est" << endl;
 			cin >> direction;
-			if (direction == "o" || direction == "open" || direction == "O" || direction == "Open") {
-				BattleSystem2();
-			}
+			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
+				room = 4;
 			if (direction == "e" || direction == "east" || direction == "E" || direction == "East")
 				room = 6;
 			break;
@@ -294,58 +291,16 @@ int main() {
 			system("pause");
 			cout << "every experince is worth something and you can alway learn new things" << endl;
 			system("pause");
-			cout << "if i could start over i would only change one thing i would want to say i love you more to the my grandma" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
+			cout << "if I could start over I would only change one thing I would want to say I love you more to the my grandma" << endl;
+			cout << "you(s)ee a cat pet it ?" << endl;
 			cin >> direction;
-			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
-				room = 8;
-			if (direction == "n" || direction == "north" || direction == "N" || direction == "North")
-				room = 6;
 			if (direction == "S" || direction == "see" || direction == "S" || direction == "See") {
 				Cat();
 			}
-			break;
+		}		break;
 
+	}
 
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-			system("pause");
-			cout << "" << endl;
-
-
-
-
-		
-		
 }//end of main
 
 
@@ -353,389 +308,60 @@ int main() {
 
 void Cat() {
 	int num = rand() % 100;
-	if (num < 20) ///
+	if (num < 20){ ///
 		cout << "milkshake licks his paw" << endl;
-	if (num < 80) {
-		cout << " /\_/\ " << endl;
-		cout << "( o.o )" << endl;
-		cout << " > ^ < " << endl;
-		cout << "milkshake purrs" << endl;
-	}
-	if (num < 60) {
-		cout << " _._     _,-'""`-._" << endl;
-		cout << "(,-.`._,'(       |\`-/|" << endl;
-		cout << "    `-.-' \ )-`( , o o)" << endl;
-		cout << "          `-    \`_`\"'- " << endl;
-		cout << "milkshake has a fish" << endl;
-	}
-	if (num < 40) {
-		cout << "      |\      _,,,---,,_" << endl;
-		cout << "ZZZzz /,`.-'`'    -.  ;-;;,_" << endl;
-		cout << "     |,4-  ) )-,_. ,\ (  `'-'" << endl;
-		cout << "     '---''(_/--'  `-'\_) " << endl;
-		cout << "milkshake is sleeping " << endl;
-	}
-	else {
-		cout << "you got nothing" << endl;
-	}
+		}else if (num < 40) {
+			cout << " /\_/\ " << endl;
+			cout << "( o.o )" << endl;
+			cout << " > ^ < " << endl;
+			cout << "milkshake purrs" << endl;
+		}
+		else if (num < 60) {
+			cout << " _._     _,-'""`-._" << endl;
+			cout << "(,-.`._,'(       |\`-/|" << endl;
+			cout << "    `-.-' \ )-`( , o o)" << endl;
+			cout << "          `-    \`_`\"'- " << endl;
+			cout << "milkshake has a fish" << endl;
+		}
+		else if (num < 80) {
+			cout << "      |\      _,,,---,,_" << endl;
+			cout << "ZZZzz /,`.-'`'    -.  ;-;;,_" << endl;
+			cout << "     |,4-  ) )-,_. ,\ (  `'-'" << endl;
+			cout << "     '---''(_/--'  `-'\_) " << endl;
+			cout << "milkshake is sleeping " << endl;
 
+		}
+		else {
+			cout << "you got nothing" << endl;
+
+		}
 }//end of pet function
 
-void Battlesystem() {
-	system("color 1B");
-	cout << " Battle commemcing" << endl;
-	int MonsterHealth = 50;
-	char input;
-	while (health > 0 && MonsterHealth > 0) {
 
 
-		if (inventory[5] != "shield") {///if you dont have the shield
-			cout << " the Monster hits you for 95 Hp" << endl;
-			health -= 95;
-		}
-		else {
-
-			cout << " the monster hits you for 50 hp" << endl;
-			health -= 50;
-			Beep(800, 200);
-		}
-		//player acctakcs
-		if (inventory[6] == "sword") {
-			cout << " you hit the monster with your sword for 30 hp" << endl;
-			MonsterHealth -= 50;
-		}
-		else {
-			cout << "you punch the monster" << endl;
-			MonsterHealth -= 3;
-		}
-
-
-		cout << " your health : " << health << ". Monster Health :" << MonsterHealth << endl;
-		system("pause");
-		if (health > 0 && MonsterHealth)
-			cout << " you can (f)ight, (r)un, or use a (p)otion" << endl;
-		cin >> input;
-		if (input == 'r') {
-			int num = rand() % 100;
-			if (num < 80) {
-				cout << " you escape the battle" << endl;
-				break;
-			}
-			else  cout << " chance to run failed" << endl;
-		}
-		if (input == 'p') {
-			if (inventory[2] == "\'potion\'") {
-				cout << (" gulg gulg ") << endl;
-				health += 35;
-				inventory[2] = " ";
-
-			}
-
-		}// end of user input
-
-
-
-
-	}// end of battle loop[
-	system("pause");
-}//end of funtion
-
-void BattleSystem2() {
-	int MonsterType = Mongen();
-	int MonsterHealth = 0;
-	int MonsterDMG = 0;
-	int PlayerDMG = 0;
-
-	// set monsters health depending on the type 
-	if (MonsterType == 1) {//skeleton
-		MonsterHealth = 50;
-	}
-
-	if (MonsterType == 2) { //Killer
-		MonsterHealth = 50;
-	}
-
-
-	//set the monster's damage depending on what type
-	if (MonsterType == 1) { //skeleton
-		MonsterDMG = 10;
-	}
-
-	if (MonsterType == 2) { //Killer
-		MonsterDMG = 65;
-	}
-
-
-	while (MonsterHealth > 0 && health > 0) {
-
-		cout << "Monster bites you for " << MonsterDMG << "HP" << endl;
-		health -= MonsterDMG;
-		PlayerDMG = 3; //Your attack is 3
-
-		if (inventory[6] == "sword") {
-			PlayerDMG = 50;
-		}
-		else {
-			PlayerDMG = 3;
-		}
-		cout << "You counter the monster for " << PlayerDMG << "HP" << endl << endl;
-		MonsterHealth -= PlayerDMG;
-		system("pause");
-		cout << "Your health is now: " << health << endl;
-		cout << "The monsters health is now: " << MonsterHealth << endl;
-		system("pause");
-
-	}
-	if (MonsterHealth <= 0)
-		cout << "You won!" << endl;
-	else
-		cout << "You died :(" << endl;
-}
-
-void Battlesystem3() {
-	int MonsterType = Mongen2();
-	int MonsterHealth = 0;
-	int MonsterDMG = 0;
-	int PlayerDMG = 0;
-
-	// set monsters health depending on the type 
-	if (MonsterType == 1) {//meat blob
-		MonsterHealth = 50;
-	}
-
-	if (MonsterType == 2) { //blood shot eyeball
-		MonsterHealth = 50;
-	}
-
-
-	//set the monster's damage depending on what type
-	if (MonsterType == 1) { //meat blob
-		MonsterDMG = 10;
-	}
-
-	if (MonsterType == 2) { //blood shot eye ball
-		MonsterDMG = 65;
-	}
-
-
-	while (MonsterHealth > 0 && health > 0) {
-
-		cout << "Monster bites you for " << MonsterDMG << "HP" << endl;
-		health -= MonsterDMG;
-		PlayerDMG = 3; //Your attack is 3
-
-		if (inventory[6] == "sword") {
-			PlayerDMG = 50;
-		}
-		else {
-			PlayerDMG = 3;
-		}
-		cout << "You counter the monster for " << PlayerDMG << "HP" << endl << endl;
-		MonsterHealth -= PlayerDMG;
-		system("pause");
-		cout << "Your health is now: " << health << endl;
-		cout << "The monsters health is now: " << MonsterHealth << endl;
-		system("pause");
-
-	}
-	if (MonsterHealth <= 0)
-		cout << "You won!" << endl;
-	else
-		cout << "You died :(" << endl;
-
-
-
-
-
-}
-
-
-int Mongen() {
-	int num = rand() % 100;
-	if (num < 20) {
-		cout << "you see a skeleton" << endl;
-		cout << "                                _.--""-._                            " << endl;
-		cout << "    .                         ."         ".                          " << endl;
-		cout << "   / \    ,^.         /(     Y             |     )\                  " << endl;
-		cout << "  /   `---. |--'\    (  \__..'--   -   -- -'..__/  )                 " << endl;
-		cout << " |        :|    `>   '.     l_..-------.._l       .'                 " << endl;
-		cout << " |      __l;__ .'      \" - .__. ^  ^      . __. - \"                " << endl;
-		cout << " \  .-'  | |  `              l._  V     _.'                          " << endl;
-		cout << "  \/     | |                   l`^^'^^'j                             " << endl;
-		cout << "         | |                _   \_____/     _                        " << endl;
-		cout << "         j |               l `--__)-'(__.--' |                       " << endl;
-		cout << "         | |               | /`---``-----'\"1 | , ---- - .            " << endl;
-		cout << "         | |               )/  `--' '---'   \'-'  ___  `-.            " << endl;
-		cout << "         | |              //  `-'  '`----'  /  ,-'   I`.  \           " << endl;
-		cout << "      _  L |_            //  `-.-.'`-----' /  /  |   |  `. \          " << endl;
-		cout << "      '._' / \         _/(   `/   )- ---' ;  /__.J   L.__.\ :         " << endl;
-		cout << "      `._;/7(-.......'  /        ) (     |  |            | |          " << endl;
-		cout << "      `._;l _'--------_/        )-'/     :  |___.    _._./ ;          " << endl;
-		cout << "        | |                 .__ )-'\  __  \  \  I   1   / /           " << endl;
-		cout << "        `-'                /   `-\-(-'   \ \  `.|   | ,' /            " << endl;
-		cout << "                           \__  `-'    __/  `-. `---'',-'             " << endl;
-		cout << "                              )-._.-- (        `-----'      " << endl;
-		cout << "                             )(  l\ o ('..-.                " << endl;
-		cout << "                        _..--' _'-' '--'.-. |               " << endl;
-		cout << "                __,,-'' _,,-''             \ \              " << endl;
-		cout << "              f'. _,,-'                     \ \             " << endl;
-		cout << "             ()--  |                         \ \            " << endl;
-		cout << "              \.  |                          /  \           " << endl;
-		cout << "                \ \                         |._  |          " << endl;
-		cout << "                 \ \                        |  ()|          " << endl;
-		cout << "                  \ \                        \  /           " << endl;
-		cout << "                   ) `-.                      | |           " << endl;
-		cout << "                  // .__)                     | |           " << endl;
-		cout << "               _.//7'                         | |           " << endl;
-		cout << "              '---'                           j_| `         " << endl;
-		cout << "                                             (| |           " << endl;
-		cout << "                                             |  \           " << endl;
-		cout << "                                             |lllj          " << endl;
-		cout << "                                             |||||          " << endl;
-		return 1;
-	}
-	else if (num < 50) {//30% chance 20-50=30
-		cout << " you see a blood shot killer" << endl;
-		cout << "⠀⠀⠀     ⣀⠤⠴⠖⡒⢒⣖⣤⣀⡀⠀⠀⠀⠀⠀⡄⡀⠀⠀⠀" << endl;
-		cout << "⠀⠀   ⢠⠊⠀⠀⠀⡠⠊⠁⠀⠀⠀⠀⠑⢄⠀⠀⠀⡇⠑⡄⠀⠀" << endl;
-		cout << "⠀⠀   ⡆⠀⠀⠀⡌⠀⢀⡀⠀⠀⠀⣀⣀⡀⠆⠀⠀⡇⢰⠃⠀⠀" << endl;
-		cout << "   ⣀⣸⡈⠁⠒⠒⠁⡊⠁⢹⡱⠀⢈⠁⢈⣿⢸⠀⠀⣇⣠⣱⠀⠀" << endl;
-		cout << "  ⢀⡋⠀⣸⠀⠉⠁⠈⡆⠉⠀⢉⣤⠀⣠⣍⠉⠀⡌⢀⣦⡟⢓⠚⢲⠀" << endl;
-		cout << " ⢸⠉⠀⡏⡆⠀⠀⠀⢱⠀⠀⠀⣉⠀⢈⣁⠀⡼⠀⠋⢄⠈⣏⢵⠀⠀" << endl;
-		cout << " ⢸⠀⠀⡇⠘⠄⠀⠀⠀⠱⢀⠈⠛⠀⠈⡁⠌⢙⠀⡆⠈⡯⠔⡺⠀" << endl;
-		cout << " ⠘⢄⡀⡇⠀⠈⠢⣀⠀⠀⠀⠈⠉⠉⠉⣠⠔⡏⠀⠈⠒⠺⠥⠇" << endl;
-		cout << "    ⡇⠀⠀⠀⠀⠉⠁⠀⠀⠀⠈⠁⠀⠀⡇" << endl;
-		cout << "    ⢰⠀⠀⠀⠀⠀⠀⠀⠀⣀⠔⠀⠀⠀⠃⠀" << endl;
-		cout << "    ⠸⡄⠀⠀⠀⠀⡌⠉⢹⠀⠀⠀⠀⣸⠀⢀⡤⠄⠐⠒⠀⠤⡀" << endl;
-		cout << "      ⠉⠀⠉⠉⠀⠀⠀⠉⠁⠀⠉⠁⠀⠀⠈⠫⠤⠤⠤⠐⠁" << endl;
-		cout << " " << endl;
-		cout << " " << endl;
-		cout << " " << endl;
-		cout << " " << endl;
-		cout << " " << endl;
-		return 2;
-	}
-	else
-		cout << "nothing is there just a corpse" << endl;
-
-}
-
-int Mongen2() {
-	int num = rand() % 100;
-	if (num < 20) {
-		cout << "you see a meat blob" << endl;
-		return 1;
-	}
-	else if (num < 50) {
-		cout << "blood shot eyeball" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡄⢹⠀⠀⡀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⠴⣶⣶⣺⣿⣼⣄⠀⣟⣇⠀⢠⠀⠀⠀⣿⠀⠀⠀⡿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⢀⣤⡿⠚⣹⣧⣶⠟⣏⢛⢹⣿⣿⢉⠉⡏⡿⣿⢻⠶⣤⣰⣷⡇⠠⣰⣿⣇⢀⠆⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠇⠀⣸⡟⡋⢸⡆⢰⣿⣷⣄⣸⣏⣏⣹⣿⣿⡄⣸⣷⣿⣇⡟⢀⣴⣿⡟⡿⢶⣿⡟⣿⣮⣀⣠⣞⠁⠀⠀⠀⢀⣰⠃⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⣿⣠⣞⣽⣿⡿⢿⣷⣄⣿⣟⣧⣽⣿⣟⣿⣿⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⠟⣼⣿⣿⣷⡟⠿⢧⣄⡀⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⢀⠀⢱⡄⠀⣄⣿⣿⡉⠁⢻⣿⣥⡽⢿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣯⣿⣿⣯⣿⣿⣿⡿⡻⠿⣶⡾⠋⢉⣶⡿⠥⠄⣠⠞⠀⣀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⢠⠸⣆⠀⢹⣭⣿⣅⠘⣿⣾⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣻⡯⣪⣥⡶⠛⣻⣶⣿⢏⠀⣠⣟⡁⢠⠀⢈⡀⠀⢀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⣼⠀⠘⣶⣾⠏⣿⣿⢿⣿⣿⣿⣿⡿⠟⢉⣽⣿⣿⣿⠿⠛⠉⠉⠁⠀⠀⠈⠉⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣿⣿⣿⣷⣟⣩⣏⣹⠿⠁⣰⠃⢀⡜⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⢻⣥⡴⢋⣹⣿⣿⣽⣿⣿⣿⡿⠏⠀⣠⣿⣿⡿⠋⠀⠀⠀⠀⣀⣀⣤⣤⣄⣀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣟⣿⣶⡾⣷⣶⣾⡟⢉⣾⡇⠀" << endl;
-		cout << "⠀⠀⠀⠀⠰⠂⣠⡿⣷⣾⣿⣷⣿⣿⣿⣿⠃⠀⠀⢰⣿⣿⠋⠀⠀⠀⢀⣶⣿⣿⣿⠿⠿⣿⣿⣿⣷⣄⠀⠀⠀⠈⢿⣿⣿⣻⢿⣿⣿⣿⣿⣤⣤⣾⣟⣻⣿⣿⣏⣴⡿⢋⣴⠛ " << endl;
-		cout << "⠀⠀ ⠀⠀⠀⣺⣏⣾⠟⣻⣿⣿⠇⣿⣿⡇⠀⠀⢀⣿⣿⡏⠀⠀⠀⢰⣿⣿⠟⠉⠀⠀⠀⠀⠉⠻⣿⣿⣷⡀⠀⠀⠀⢻⣿⣿⢣⡙⢿⣿⣿⣿⣿⣯⣿⣶⣾⡿⣟⣭⣶⡾⠋⠀" << endl;
-		cout << "  ⠠⢤⡆⣴⣳⣿⢿⣿⡿⠟⠁⠀⣿⣿⠁⠀⠀⠸⣿⣿⡇⠀⠀⠀⢸⣿⣿⣤⣤⣴⣶⣦⡀⠀⠀⠈⢿⣿⣷⠀⠀⠀⠘⣿⣿⡆⢻⠠⠟⠿⣿⣿⣿⣿⣟⡛⣻⣿⠟⠋⣀⢀⠀" << endl;
-		cout << "⠀⠀⠀ ⣙⣿⣿⣿⣿⠋⣴⡄⠀⠀⣿⣿⡆⠀⠀⠀⢻⣿⣷⡀⠀⠀⠈⠻⠿⠿⠟⠛⣿⣿⣧⠀⠀⠀⢸⣿⣿⡄⠀⠀⠀⣿⣿⣇⡟⠀⠀⠀⢲⣿⣿⣿⣿⣿⣿⣶⣶⣾⡿⠟⠀" << endl;
-		cout << "  ⣀⣠⣿⣟⣷⡿⢁⡾⢸⡁⠀⠀⢻⣿⣷⡀⠀⠀⠈⢿⣿⣿⣤⣀⠀⠀⠀⠀⢀⣰⣿⣿⡏⠀⠀⠀⢸⣿⣿⠁⠀⠀⢠⣿⣿⡟⠀⠀⠀⢠⣿⢿⣢⡻⢿⠙⢿⣛⣏⠁⠀⠀⠀" << endl;
-		cout << " ⢠⣾⣿⠟⣽⡟⡇⠙⢿⢄⣇⠀⠀⠀⢿⣿⣷⡄⠀⠀⠀⠙⠿⣿⣿⣿⣷⣶⣿⣿⣿⡿⠋⠀⠀⠀⣠⣿⣿⡟⠀⠀⠀⣾⣿⠋⠀⠀⢀⢀⣿⡿⢷⣾⣿⣯⣄⣹⡿⠋⠀⠀⠀⠀" << endl;
-		cout << "  ⠉⠁⢰⣿⠁⣳⡅⠈⣦⡝⣤⡀⠀⠈⠻⣿⣿⣦⡀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠋⠁⠀⠀⠀⢀⣴⣿⣿⠟⠀⠀⢀⣾⠟⠁⠀⠀⢠⣬⣿⣿⣿⣞⠇⢳⡌⢿⣿⠁⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀  ⡿⢧⡀⠉⣩⣤⣧⣈⠙⠺⠶⣤⣄⡈⠻⣿⣿⣷⣦⣤⣀⡀⠀⠀⠀⠀⠀⣀⣠⣴⣾⣿⣿⠟⠁⠀⢀⣴⠟⠁⠀⢀⣤⣾⣿⣿⠿⣾⠷⣿⣆⡼⠓⣾⡇⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠹⢦⣉⣉⣀⠤⡜⠉⠛⢶⣤⣄⣀⣉⡉⠛⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠋⠁⣠⠴⠞⣉⣀⣀⣤⣶⢶⣻⣿⡵⣘⠢⠈⣦⠘⢿⠇⢰⡿⠁⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠙⠛⠛⠛⢧⣤⡴⠋⠀⠈⢻⡿⠾⢿⣷⣶⣤⣴⣆⣌⣭⣉⣩⣭⣉⠀⣄⡤⣄⢠⣤⣄⣠⣴⠾⣿⡿⣏⠘⠻⣧⡘⣿⡜⠶⠄⠈⢤⠞⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⣯⣭⣽⣳⢦⣉⠲⢤⣠⠏⠀⠀⡼⣱⠋⢹⣿⢻⠟⠛⡟⣿⠟⢻⠟⣟⢿⠻⣟⠛⢯⢻⣯⣆⠘⣿⡌⢳⣄⢻⣷⠈⠀⠀⢀⡤⠋⢠⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠘⠿⠉⠉⠻⢷⣌⠙⠲⣽⡃⠀⠀⢷⠇⠀⠸⠁⡞⠀⡀⠙⡟⠂⠀⡟⢿⣼⠀⠹⡇⠈⢧⣎⢿⣇⠸⠿⠀⠉⢮⠏⠃⢀⡴⠊⠀⣠⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << " ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⢦⡀⠉⠓⢦⣞⠀⠀⠀⠀⠁⠀⠀⠀⡇⠈⠳⡷⠀⡿⠴⠀⠘⠀⠸⠋⠻⣿⠀⠀⠁⠈⢈⡧⠞⠁⠀⠀⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠉⠓⠦⣄⣀⠀⠀⠀⠁⠀⠀⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠓⠲⠤⢤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		cout << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << endl;
-		return 2;
-	}
-	else cout << "zombie" << endl;
-}
 
 void ItemDropper() {
 	int num = rand() % 100; //0-99
+	int i = 0;
+	while (i < 10 && inventory[i] != " ") i++; // Find an empty slot
+	if (i == 10) {  // Inventory is full
+		cout << "No space for more items!" << endl;
+		return;
+	}
 	if (num < 20) {
-		cout << "shield" << endl;
-		inventory[5] = "shield";
+		cout << "you got candy" << endl;
+		inventory[i] = "candy";
 	}
 	else if (num < 50) {
 		cout << "you got a chicken named jorge" << endl;
-		inventory[5] = "chicken named jorge";
+		inventory[i] = "chicken named jorge";
 	}
 	else if (num < 75) {
-		cout << "you got a sword" << endl;
-		inventory[6] = "sword";
+		cout << "you got a sock" << endl;
+		inventory[i] = "sock";
 	}
 	else {
-		cout << "you get  nothing!" << endl;
-	}
-
-
-}
-
-void Shop() {
-	string input = "asdfasdfsadf";
-	while (input != "q") {
-		cout << "welcome to the shop" << endl;
-		cout << "you have $" << gold << endl;
-		cout << "items for sale" << endl;
-		cout << " 1) cupcake $5" << endl;
-		cout << " 2) chicken  50$" << endl;
-		cout << " 3) leaf 100$ " << endl;
-		cout << "4) potion 10$" << endl;
-		cout << " if you don't want anything (q)uit" << endl;
-		cout << " what would u like to purchase" << endl;
-		cin >> input;
-
-
-		if (input == "1") {
-			if (gold >= 5) {
-				cout << " you bought the cupcake " << endl;
-				inventory[8] = "cupcake";
-				gold -= 5;
-			}
-			else
-				cout << " u cant even buy a cupcake" << endl;
-		}
-		if (input == "2") {
-			if (gold >= 50) {
-				cout << " you bought the chicken " << endl;
-				inventory[2] = "chicken";
-				gold -= 50;
-			}
-
-			else
-				cout << " u cant even buy a chicken" << endl;
-		}
-		if (input == "3") {
-			if (gold >= 100) {
-				cout << " you bought the leaf " << endl;
-				inventory[3] = "leaf";
-				gold -= 100;
-			}
-
-			else
-				cout << " u cant even buy a leaf" << endl;
-		}
-		if (input == "4") {
-			if (gold >= 10) {
-				cout << " you bought a potion " << endl;
-				inventory[4] = "potion";
-				gold -= 10;
-			}
-
-			else
-				cout << " u cant even buy a potion" << endl;
-
-
-		}
-
+		cout << "you get nothing!" << endl;
 	}
 }
+
