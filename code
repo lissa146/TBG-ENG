@@ -1,5 +1,19 @@
-#include<iostream>
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Denver Public Schools Mail with screen readers
+1 of 1,470
+code
+Inbox
+
+Jayden Clockston
+9:01 AM (3 minutes ago)
+to me
+
 #include<Windows.h>
+#include<iostream>
+#pragma comment(lib, "winmm.lib")
+#include<string>
 using namespace std;
 /// <summary>
 /// global variables
@@ -8,298 +22,306 @@ string inventory[10] = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
 int health = 100;
 //funtions
 int gold = 100;
-char input = ' ';
 void ItemDropper();
 void Cat();
 bool Haswon = false;
 int main() {
-	//local variables
-	srand(time(NULL));//rand the seed so it changes what it give you for item dropper
-	int room = 1;
-	string direction;
-	int milkshake = 0;
-	bool chest1 = false;//have we have open teh frist chest
-	bool Realend = false;
-	//bool chests[5] = { 0,0,0,0,0 };//if u have alot of chest
-	Beep(800, 200);
-	cout << "hey man were almost there" << endl;
-	system("pause");
-	cout << "ok ok whos going to be there anyways? huh" << endl;
-	system("pause");
-	cout << "just some of the other people I know" << endl;
-	system("pause");
-	cout << " okay" << endl;
-	system("pause");
-	cout << "well were finally here man its beatiful out here" << endl;
-	system("pause");
-	cout << "yea your totally right man the mountians are great well lets get hiking on the trail" << endl;
-	system("pause");
-	cout << "Yea lets" << endl;
-	system("pause");
-	cout << "later on the trail you start talking to this girl she said her name was christina" << endl;
-	system("pause");
-	cout << "you get her number and soon start talking to eachother alot" << endl;
-	system("pause");
-	cout << " then once you know it you guys start dating, a year after dating you two have a kid" << endl;
-	system("pause");
-	cout << "you and chistina name her melissa elizabeth verastegui" << endl;
-	system("pause");
-	cout << "a year later..." << endl;
-	system("pause");
-	cout << "you and christina think that melissa will get loney so you have another kid" << endl;
-	system("pause");
-	cout << "when chistina was pregentant she got shoot in the rib cage luckiy the baby wasnt hurt" << endl;
-	system("pause");
-	cout << "they named him juan johnny verastegui" << endl;
-	
-	
-	while (input != 'q' && !Haswon && health > 0) {
-		//////game loop
-		cout << "your backpack:" << endl;
-		for (int i = 0; i < 10; i++) //inventory
-			cout << inventory[i] << " ";
-		cout << endl << endl;
+//local variables
+srand(time(NULL));//rand the seed so it changes what it give you for item dropper
 
-		switch (room) {
-		case 1:
+Beep(800, 200);
+cout << "hey man were almost there" << endl;
+system("pause");
+cout << "ok ok whos going to be there anyways? huh" << endl;
+system("pause");
+cout << "just some of the other people I know" << endl;
+system("pause");
+cout << " okay" << endl;
+system("pause");
+cout << "well were finally here man its beatiful out here" << endl;
+system("pause");
+cout << "yea your totally right man the mountians are great well lets get hiking on the trail" << endl;
+system("pause");
+cout << "Yea lets" << endl;
+system("pause");
+cout << "later on the trail you start talking to this girl she said her name was christina" << endl;
+system("pause");
+cout << "you get her number and soon start talking to eachother alot" << endl;
+system("pause");
+cout << " then once you know it you guys start dating, a year after dating you two have a kid" << endl;
+system("pause");
+cout << "you and chistina name her melissa elizabeth verastegui" << endl;
+system("pause");
+cout << "a year later..." << endl;
+system("pause");
+cout << "you and christina think that melissa will get loney so you have another kid" << endl;
+system("pause");
+cout << "when chistina was pregentant she got shoot in the rib cage luckiy the baby wasnt hurt" << endl;
+system("pause");
+cout << "they named him juan johnny verastegui" << endl;
+cout << " " << endl;
 
-			system("color 0A");
-			cout << "melissa hey! wake up hurry up and get ready for school its your first day of 4th grade" << endl;
-			system("pause");
-			cout << "ok okay ma 5 more mintues" << endl;
-			system("pause");
-			cout << "no you need to get up now" << endl;
-			system("pause");
-			cout << "ok fine (you get changed) you can (o)pen the door, (l)ook under your bed or you can open the (b)ox in the corner" << endl;
-			cout << "You go to school then you go home " << endl;
-			system("pause");
-			cout << "You come home after you eat dinner " << endl;
-			system("pause");
-			cout << "You watch tv with your brother " << endl;
-			system("pause");
-			cout << "Then both of you too start getting ready for bed" << endl;
-			system("pause");
-			cout << "Then when your at your bed you and johnny start hearing yelling and screaming" << endl;
-			system("pause");
-			cout << "Hey johnny cover your ears its getting loud" << endl;
-			system("pause");
-			cout << "Try to go to sleep okay?" << endl;
-			system("pause");
-			cout << "You both go to sleep and wake up " << endl;
-			system("pause");
-			cout << "Hey your dad is gonna drive you to school if the office asks tell them he's your tio " << endl;
-			system("pause");
-			cout << "Okay ma" << endl;
-			cin >> direction;
-			if (direction == "o" || direction == "open" || direction == "O" || direction == "Open")
-				room = 2;
-		
-		if (direction == "b" || direction == "box" || direction == "B" || direction == "BOX") {
-			if (chest1 == false) {
-				cout << "the box has!" << endl;
-				ItemDropper();
-				chest1 = true;
-			}
-			else {
-				cout << "the chest is empty" << endl;
-			}
-		}
-		break;
-		case 2:
-			cout << "Later after school….." << endl;
-			system("pause");
-			cout << "im home" << endl;
-			system("pause");
-			cout << "Hey lissa wash some dishes " << endl;
-			system("pause");
-			cout << "okay" << endl;
-			system("pause");
-			cout << "A few minutes later.." << endl;
-			system("pause");
-			cout << "What the fuck is this these dishes have soap all over them" << endl;
-			system("pause");
-			cout << "Redo do them do you not have fuckin common sense washing dishes" << endl;
-			system("pause");
-			cout << "like this is easy you should be able to wash them do them again NOW" << endl;
-			system("pause");
-			cout << "Okay im sorry ma i tried i didn't know they had soap on them" << endl;
-			system("pause");
-			cout << "Yes you did its obvious are you fuckin stupid" << endl;
-			system("pause");
-			cout << "Im sorry (you are crying now)" << endl;
-			system("pause");
-			cout << "Stop crying before i give you something to cry about" << endl;
-			system("pause");
-			cout << "She leaves the kitchen" << endl;
-			system("pause");
-			cout << "you can go(w)est or (e)ast into the next room" << endl;
+int room = 1;
+string direction = "a";
+int milkshake = 0;
+bool chest1 = false;//have we have open teh frist chest
+bool Realend = false;
+//bool chests[5] = { 0,0,0,0,0 };//if u have alot of chest
 
-			cin >> direction;
-			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
-				room = 1;
-			if (direction == "e" || direction == "east" || direction == "E" || direction == "East")
-				room = 3;
-			break;
-		case 3:
-			cout << "Later that day…" << endl;
-			system("pause");
-			cout << "Hey start getting a backpack with your close you and your brother are going to grandmas" << endl;
-			system("pause");
-			cout << "Okay i will tell johnny" << endl;
-			system("pause");
-			cout << "You and johnny pack your things and go to grandma's apartment" << endl;
-			system("pause");
-			cout << "Your grandmas apartment was small your tia and tio both lived with her" << endl;
-			system("pause");
-			cout << "Her apartment was on the second floor and the stairs leading to it were rusty orange" << endl;
-			system("pause");
-			cout << "Her apartments were right next to waterworld" << endl;
-			system("pause");
-			cout << "Hi grandma i missed you when is angie and mikey going to get here" << endl;
-			system("pause");
-			cout << "They will get here later your uncle mikey is gonna drop them off" << endl;
-			system("pause");
-			cout << "Okayy" << endl;
-			system("pause");
-			cout << "later …" << endl;
-			system("pause");
-			cout << "Angieee i missed you hi lissa" << endl;
-			system("pause");
-			cout << "All of us asked grandma if we can go to the dollar tree" << endl;
-			system("pause");
-			cout << "She said yes" << endl;
-			system("pause");
-			cout << "Now were all at the dollar tree" << endl;
-			system("pause");
-			cout << "Okay guys you can only get one thing" << endl;
-			system("pause");
-			cout << "You all get candy " << endl;
-			system("pause");
-			cout << "Then you and your cousins and brother get in the car and grandma drives you back" << endl;
-			system("pause");
-			cout << "The next day…" << endl;
-			system("pause");
-			cout << "In the morning you wake up and smell blueberry and banana pancakes" << endl;
-			system("pause");
-			cout << "you can go (S)outh into the next room or you can go in the last room (w)est Also you can pick a box up " << endl;
-			cin >> direction;
-			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
-				room = 2;
-			if (direction == "o" || direction == "open" || direction == "O" || direction == "Open") {
-				ItemDropper();
-			}
-			if (direction == "south" || direction == "S" || direction == "South")
-				room = 4;
-			break;
+while (direction != "q") { //GAME LOOP
 
+//print out inventory
+//cout << "your inventory:" << endl;
+//for (int i = 0; i < 10; i++)
+//cout << inventory[i] << " ";
+//cout << endl;
 
+switch (room) {
+case 1:
 
-		case 4:
-			cout << "years laters..." << endl;
-			system("pause");
-			cout << "hey guys we need to talk to you and your brother" << endl;
-			system("pause");
-			cout << "okay ma" << endl;
-			system("pause");
-			cout << "hey you know me and your dad will always keep it real" << endl;
-			system("pause");
-			cout << "we just found out that your grandma has pancratic cancer" << endl;
-			system("pause");
-			cout << "you are crying" << endl;
-			system("pause");
-			cout << "all we can do is take care of her she will be going though kemo" << endl;
-			cout << "and she will be drugged up so she wont know whats going on" << endl;
-			system("pause");
-			cout << "okay ma" << endl;
-			system("pause");
-			cout << "after a month her hair kept failing out" << endl;
-			system("pause");
-			cout << "after a few she didnt have really any hair and kept wearing a beanie she was also very skinny" << endl;
-			system("pause");
-			cout << "the woman i knew when i was yougner wasnt there anymore" << endl;
-			system("pause");
-			cout << "the woman there was now was skinny,frail, couldnt speak and had little hair " << endl;
-			system("pause");
-			cout << "after a year she passed away she was only 53" << endl;
-			system("pause");
-			cout << "you cant help but think about her" << endl;
-			system("pause");
-			cout << "how she would tie her hair in a tight gelled ponytail" << endl;
-			system("pause");
-			cout << "or how big she was. it was shocking how skinny she became after kemo" << endl;
-			system("pause");
-			cout << " though seeing her grow weaker and weaker day by day hurt alot atleast she made me have a good childhood" << endl;
-			system("pause");
-			cout << "you can go in the next room (e)ast or last one (N)orth" << endl;
-			cin >> direction;
-			if (direction == "n" || direction == "north" || direction == "N" || direction == "North")
-				room = 3;
-			if (direction == "e" || direction == "east" || direction == "E" || direction == "East")
-				room = 5;
-			break;
-		case 5:
-			cout << "over the years ma has showed me history of natives" << endl;
-			system("pause");
-			cout << "natives were treated badly for a long time and continue to be treated badly now" << endl;
-			system("pause");
-			cout << "she thought i would need this information" << endl;
-			system("pause");
-			cout << "ypu know your so lucky i put this roof over your head and i put food in your mouth" << endl;
-			system("pause");
-			cout << "i had to take care of your tio and tia and we were homeless" << endl;
-			system("pause");
-			cout << "your grandma was nowhere to be found sometimes and she would give her money to uncle mikey in jail" << endl;
-			system("pause");
-			cout << "you have everything put in front of you, you should be more greatful" << endl;
-			system("pause");
-			cout << "you can go (e)ast or (w)est" << endl;
-			cin >> direction;
-			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
-				room = 4;
-			if (direction == "e" || direction == "east" || direction == "E" || direction == "East")
-				room = 6;
-			break;
-		case 6:
-			system("pause");
-			cout << "ma are you going to wax your brows to day they are growing out" << endl;
-			system("pause");
-			cout << "yea and hey do you want to see this picture of you tios and tias" << endl;
-			system("pause");
-			cout << "sure" << endl;
-			system("pause");
-			cout << "there are alot of people in tank tops and suspenders" << endl;
-			cin >> direction;
-			if (direction == "w" || direction == "west" || direction == "W" || direction == "West")
-				room = 5;
-			if (direction == "s" || direction == "south" || direction == "S" || direction == "South")
-				room = 7;
-			break;
+system("color 0A");
+cout << "melissa hey! wake up hurry up and get ready for school its your first day of 4th grade" << endl;
+system("pause");
+cout << "ok okay ma 5 more mintues" << endl;
+system("pause");
+cout << "no you need to get up now" << endl;
+system("pause");
+cout << "ok fine (you get changed) you can (o)pen the door, (l)ook under your bed or you can open the (b)ox in the corner" << endl;
+cout << "You go to school then you go home " << endl;
+system("pause");
+cout << "You come home after you eat dinner " << endl;
+system("pause");
+cout << "You watch tv with your brother " << endl;
+system("pause");
+cout << "Then both of you too start getting ready for bed" << endl;
+system("pause");
+cout << "Then when your at your bed you and johnny start hearing yelling and screaming" << endl;
+system("pause");
+cout << "Hey johnny cover your ears its getting loud" << endl;
+system("pause");
+cout << "Try to go to sleep okay?" << endl;
+system("pause");
+cout << "You both go to sleep and wake up " << endl;
+system("pause");
+cout << "Hey your dad is gonna drive you to school if the office asks tell them he's your tio " << endl;
+system("pause");
+cout << "Okay ma" << endl;
+getline(cin, direction);
+if (direction.compare("o") == 0 || direction.compare("open") == 0 || direction.compare("Open") == 0 || direction.compare("O") == 0)
+room = 2;
+
+if (direction.compare("b") == 0 || direction.compare("box") == 0 || direction.compare("B") == 0 || direction.compare("Box") == 0) {
+if (chest1 == false) {
+cout << "the box has!" << endl;
+ItemDropper();
+chest1 = true;
+}
+else {
+cout << "the chest is empty" << endl;
+}
+}
+break;
+case 2:
+cout << "Later after school….." << endl;
+system("pause");
+cout << "im home" << endl;
+system("pause");
+cout << "Hey lissa wash some dishes " << endl;
+system("pause");
+cout << "okay" << endl;
+system("pause");
+cout << "A few minutes later.." << endl;
+system("pause");
+cout << "What the fuck is this these dishes have soap all over them" << endl;
+system("pause");
+cout << "Redo do them do you not have fuckin common sense washing dishes" << endl;
+system("pause");
+cout << "like this is easy you should be able to wash them do them again NOW" << endl;
+system("pause");
+cout << "Okay im sorry ma i tried i didn't know they had soap on them" << endl;
+system("pause");
+cout << "Yes you did its obvious are you fuckin stupid" << endl;
+system("pause");
+cout << "Im sorry (you are crying now)" << endl;
+system("pause");
+cout << "Stop crying before i give you something to cry about" << endl;
+system("pause");
+cout << "She leaves the kitchen" << endl;
+system("pause");
+cout << "you can go (w)est to move back or go (e)ast into the next room" << endl;
+
+getline(cin, direction);
+if (direction.compare("w") == 0 || direction.compare("west") == 0 || direction.compare("W") == 0 || direction.compare("West") == 0)
+room = 1;
+if (direction.compare("e") == 0 || direction.compare("east") == 0 || direction.compare("E") == 0 || direction.compare("East") == 0)
+room = 3;
+break;
+case 3:
+cout << "Later that day…" << endl;
+system("pause");
+cout << "Hey start getting a backpack with your close you and your brother are going to grandmas" << endl;
+system("pause");
+cout << "Okay i will tell johnny" << endl;
+system("pause");
+cout << "You and johnny pack your things and go to grandma's apartment" << endl;
+system("pause");
+cout << "Your grandmas apartment was small your tia and tio both lived with her" << endl;
+system("pause");
+cout << "Her apartment was on the second floor and the stairs leading to it were rusty orange" << endl;
+system("pause");
+cout << "Her apartments were right next to waterworld" << endl;
+system("pause");
+cout << "Hi grandma i missed you when is angie and mikey going to get here" << endl;
+system("pause");
+cout << "They will get here later your uncle mikey is gonna drop them off" << endl;
+system("pause");
+cout << "Okayy" << endl;
+system("pause");
+cout << "later …" << endl;
+system("pause");
+cout << "Angieee i missed you hi lissa" << endl;
+system("pause");
+cout << "All of us asked grandma if we can go to the dollar tree" << endl;
+system("pause");
+cout << "She said yes" << endl;
+system("pause");
+cout << "Now were all at the dollar tree" << endl;
+system("pause");
+cout << "Okay guys you can only get one thing" << endl;
+system("pause");
+cout << "You all get candy " << endl;
+system("pause");
+cout << "Then you and your cousins and brother get in the car and grandma drives you back" << endl;
+system("pause");
+cout << "The next day…" << endl;
+system("pause");
+cout << "In the morning you wake up and smell blueberry and banana pancakes" << endl;
+system("pause");
+cout << "you can go (S)outh into the next room or you can go in the last room (w)est Also you can pick a box up " << endl;
+getline(cin, direction);
+if (direction.compare("w") == 0 || direction.compare("West") == 0 || direction.compare("west") == 0 || direction.compare("W") == 0)
+room = 2;
+if (direction.compare("o") == 0 || direction.compare("open") == 0 || direction.compare("Open") == 0 || direction.compare("O") == 0) {
+ItemDropper();
+}
+if (direction.compare("s") == 0 || direction.compare("S") == 0 || direction.compare("south") == 0 || direction.compare("South") == 0)
+room = 4;
+break;
 
 
 
-		case 7:
-			system("pause");
-			cout << "you feel like the years have passed by" << endl;
-			system("pause");
-			cout << "there wil always be apart of you taht wishes to go back when you were little" << endl;
-			system("pause");
-			cout << "back to a time were you dont have to worry about the future or bills or to get a job" << endl;
-			system("pause");
-			cout << "all you want at that time is to grow up but once you actually grow up you just want to be little again" << endl;
-			system("pause");
-			cout << "though growing up is hard atleast you get to experince different things" << endl;
-			system("pause");
-			cout << "every experince is worth something and you can alway learn new things" << endl;
-			system("pause");
-			cout << "if I could start over I would only change one thing I would want to say I love you more to the my grandma" << endl;
-			cout << "you(s)ee a cat pet it ?" << endl;
-			cin >> direction;
-			if (direction == "S" || direction == "see" || direction == "S" || direction == "See") {
-				Cat();
-			}
-		}		break;
+case 4:
+cout << "years later..." << endl;
+system("pause");
+cout << "hey guys we need to talk to you and your brother" << endl;
+system("pause");
+cout << "okay ma" << endl;
+system("pause");
+cout << "hey you know me and your dad will always keep it real" << endl;
+system("pause");
+cout << "we just found out that your grandma has pancratic cancer" << endl;
+system("pause");
+cout << "you are crying" << endl;
+system("pause");
+cout << "all we can do is take care of her she will be going though kemo" << endl;
+cout << "and she will be drugged up so she wont know whats going on" << endl;
+system("pause");
+cout << "okay ma" << endl;
+system("pause");
+cout << "after a month her hair kept failing out" << endl;
+system("pause");
+cout << "after a few she didnt have really any hair and kept wearing a beanie she was also very skinny" << endl;
+system("pause");
+cout << "the woman i knew when i was yougner wasnt there anymore" << endl;
+system("pause");
+cout << "the woman there was now was skinny,frail, couldnt speak and had little hair " << endl;
+system("pause");
+cout << "after a year she passed away she was only 53" << endl;
+system("pause");
+cout << "you cant help but think about her" << endl;
+system("pause");
+cout << "how she would tie her hair in a tight gelled ponytail" << endl;
+system("pause");
+cout << "or how big she was. it was shocking how skinny she became after kemo" << endl;
+system("pause");
+cout << " though seeing her grow weaker and weaker day by day hurt alot atleast she made me have a good childhood" << endl;
+system("pause");
+cout << "you can go in the next room (e)ast or last one (N)orth" << endl;
+getline(cin, direction);
+if (direction.compare("n") == 0 || direction.compare("north") == 0 || direction.compare("N") == 0 || direction.compare("North") == 0)
+room = 3;
+if (direction.compare("e") == 0 || direction.compare("east") == 0 || direction.compare("E") == 0 || direction.compare("East") == 0)
+room = 5;
+break;
+case 5:
+cout << "over the years ma has showed me history of natives" << endl;
+system("pause");
+cout << "natives were treated badly for a long time and continue to be treated badly now" << endl;
+system("pause");
+cout << "she thought i would need this information" << endl;
+system("pause");
+cout << "ypu know your so lucky i put this roof over your head and i put food in your mouth" << endl;
+system("pause");
+cout << "i had to take care of your tio and tia and we were homeless" << endl;
+system("pause");
+cout << "your grandma was nowhere to be found sometimes and she would give her money to uncle mikey in jail" << endl;
+system("pause");
+cout << "you have everything put in front of you, you should be more greatful" << endl;
+system("pause");
+cout << "you can go (e)ast into the next room or (w)est to go back" << endl;
+getline(cin, direction);
+if (direction.compare("w") == 0 || direction.compare("W") == 0 || direction.compare("West") == 0 || direction.compare("west") == 0)
+room = 4;
+if (direction.compare("e") == 0 || direction.compare("E") == 0 || direction.compare("east") == 0 || direction.compare("East") == 0)
+room = 6;
+break;
+case 6:
 
-	}
+cout << "ma are you going to wax your brows to day they are growing out" << endl;
+system("pause");
+cout << "yea and hey do you want to see this picture of you tios and tias" << endl;
+system("pause");
+cout << "sure" << endl;
+system("pause");
+cout << "there are alot of people in tank tops and suspenders" << endl;
+cout << "You can move (s)outh into the next room or move (w)est into the last one" << endl;
+getline(cin, direction);
+if (direction.compare("w") == 0 || direction.compare("W") == 0 || direction.compare("West") == 0 || direction.compare("west") == 0)
+room = 5;
+if (direction.compare("s") == 0 || direction.compare("S") == 0 || direction.compare("south") == 0 || direction.compare("South") == 0)
+room = 7;
+break;
+
+
+
+case 7:
+
+cout << "you feel like the years have passed by" << endl;
+system("pause");
+cout << "there wil always be apart of you taht wishes to go back when you were little" << endl;
+system("pause");
+cout << "back to a time were you dont have to worry about the future or bills or to get a job" << endl;
+system("pause");
+cout << "all you want at that time is to grow up but once you actually grow up you just want to be little again" << endl;
+system("pause");
+cout << "though growing up is hard atleast you get to experince different things" << endl;
+system("pause");
+cout << "every experince is worth something and you can alway learn new things" << endl;
+system("pause");
+cout << "if I could start over I would only change one thing I would want to say I love you more to the my grandma" << endl;
+cout << "you (s)ee a cat, do you want to pet it ?" << endl;
+getline(cin, direction);
+if (direction.compare("s") == 0 || direction.compare("S") == 0 || direction.compare("south") == 0 || direction.compare("South") == 0) {
+Cat();
+}
+break;
+
+default:
+cout << "you should never see this!" << endl;
+
+}
+
+}
 
 }//end of main
 
@@ -307,61 +329,61 @@ int main() {
 ///funtions
 
 void Cat() {
-	int num = rand() % 100;
-	if (num < 20){ ///
-		cout << "milkshake licks his paw" << endl;
-		}else if (num < 40) {
-			cout << " /\_/\ " << endl;
-			cout << "( o.o )" << endl;
-			cout << " > ^ < " << endl;
-			cout << "milkshake purrs" << endl;
-		}
-		else if (num < 60) {
-			cout << " _._     _,-'""`-._" << endl;
-			cout << "(,-.`._,'(       |\`-/|" << endl;
-			cout << "    `-.-' \ )-`( , o o)" << endl;
-			cout << "          `-    \`_`\"'- " << endl;
-			cout << "milkshake has a fish" << endl;
-		}
-		else if (num < 80) {
-			cout << "      |\      _,,,---,,_" << endl;
-			cout << "ZZZzz /,`.-'`'    -.  ;-;;,_" << endl;
-			cout << "     |,4-  ) )-,_. ,\ (  `'-'" << endl;
-			cout << "     '---''(_/--'  `-'\_) " << endl;
-			cout << "milkshake is sleeping " << endl;
+int num = rand() % 100;
+if (num < 20) { ///
+cout << "milkshake licks his paw" << endl;
+}
+else if (num < 40) {
+cout << " /\_/\ " << endl;
+cout << "( o.o )" << endl;
+cout << " > ^ < " << endl;
+cout << "milkshake purrs" << endl;
+}
+else if (num < 60) {
+cout << " _._     _,-'""`-._" << endl;
+cout << "(,-.`._,'(       |\`-/|" << endl;
+cout << "    `-.-' \ )-`( , o o)" << endl;
+cout << "          `-    \`_`\"'- " << endl;
+cout << "milkshake has a fish" << endl;
+}
+else if (num < 80) {
+cout << "      |\      _,,,---,,_" << endl;
+cout << "ZZZzz /,`.-'`'    -.  ;-;;,_" << endl;
+cout << "     |,4-  ) )-,_. ,\ (  `'-'" << endl;
+cout << "     '---''(_/--'  `-'\_) " << endl;
+cout << "milkshake is sleeping " << endl;
 
-		}
-		else {
-			cout << "you got nothing" << endl;
+}
+else {
+cout << "you got nothing" << endl;
 
-		}
+}
 }//end of pet function
 
 
 
 
 void ItemDropper() {
-	int num = rand() % 100; //0-99
-	int i = 0;
-	while (i < 10 && inventory[i] != " ") i++; // Find an empty slot
-	if (i == 10) {  // Inventory is full
-		cout << "No space for more items!" << endl;
-		return;
-	}
-	if (num < 20) {
-		cout << "you got candy" << endl;
-		inventory[i] = "candy";
-	}
-	else if (num < 50) {
-		cout << "you got a chicken named jorge" << endl;
-		inventory[i] = "chicken named jorge";
-	}
-	else if (num < 75) {
-		cout << "you got a sock" << endl;
-		inventory[i] = "sock";
-	}
-	else {
-		cout << "you get nothing!" << endl;
-	}
+int num = rand() % 100; //0-99
+int i = 0;
+while (i < 10 && inventory[i] != " ") i++; // Find an empty slot
+if (i == 10) {  // Inventory is full
+cout << "No space for more items!" << endl;
+return;
 }
-
+if (num < 20) {
+cout << "you got candy" << endl;
+inventory[i] = "candy";
+}
+else if (num < 50) {
+cout << "you got a chicken named jorge" << endl;
+inventory[i] = "chicken named jorge";
+}
+else if (num < 75) {
+cout << "you got a sock" << endl;
+inventory[i] = "sock";
+}
+else {
+cout << "you get nothing!" << endl;
+}
+}
